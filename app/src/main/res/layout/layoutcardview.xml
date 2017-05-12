@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:stateListAnimator="@animator/touch_raise"
+    android:id="@+id/cardView"
+    app:elevation="1dp">
+
+    <LinearLayout
+        android:id="@+id/news_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView android:id="@+id/cook_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cook_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/cook_collection_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart_off" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/cook_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:textSize="12sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/foodRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3"
+                android:isIndicator="true"
+                android:stepSize="0.5" />
+
+
+            <TextView
+                android:id="@+id/cook_keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/cook_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:minLines="3"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

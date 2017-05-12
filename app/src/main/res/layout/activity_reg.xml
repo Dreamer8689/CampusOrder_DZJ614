@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dreamer.neusoft.campusorder_dzj614.activity.RegActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/bottom_font"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/reg_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/bottom_font"
+            android:src="@drawable/ic_soty" />
+
+        <TextView
+            android:id="@+id/login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:text="注册" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/reg_username"
+            android:drawableLeft="@drawable/ic_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="10dp"
+            android:hint="用户名" />
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:drawableLeft="@drawable/ic_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="密码"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/reg_password1"
+            android:drawableLeft="@drawable/ic_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="确认密码"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/reg_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="联系方式"
+            android:drawableLeft="@drawable/ic_phone"
+            android:layout_marginBottom="10dp"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/reg_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="配送地址"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_address"
+            android:inputType="textPostalAddress" />
+
+        <EditText
+            android:id="@+id/reg_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="备注信息"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_note"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/reg_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector1"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="注册" />
+    </LinearLayout>
+
+
+</LinearLayout>

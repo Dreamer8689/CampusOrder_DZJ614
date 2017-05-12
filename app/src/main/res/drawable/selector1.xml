@@ -1,0 +1,5 @@
+
+<selector xmlns:Android="http://schemas.android.com/apk/res/android">
+    <item Android:drawable="@drawable/shape_reg" Android:state_pressed="true"/>
+    <item Android:drawable="@drawable/shape_reg1" Android:state_pressed="false"/>
+</selector>
