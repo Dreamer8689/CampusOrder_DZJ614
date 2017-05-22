@@ -121,7 +121,7 @@ public class ViewHolder extends RecyclerView.ViewHolder{
     public ViewHolder(View itemView) {
         super(itemView);
         cook_name = (TextView) itemView.findViewById(R.id.collection_name);
-        cook_img = (ImageView) itemView.findViewById(R.id.collection_img);
+        cook_img = (ImageView) itemView.findViewById(R.id.shopAssess_collection_img);
         collection_comment = (TextView) itemView.findViewById(R.id.collection_comment);
         collection_address = (TextView) itemView.findViewById(R.id.collection_address);
         collection_price=(TextView)itemView.findViewById(R.id.collection_price);

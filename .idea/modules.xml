@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CampusOrder_DZJ614.iml" filepath="$PROJECT_DIR$/CampusOrder_DZJ614.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pickerview/pickerview.iml" filepath="$PROJECT_DIR$/pickerview/pickerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/pulltofresh/pulltofresh.iml" filepath="$PROJECT_DIR$/pulltofresh/pulltofresh.iml" />
     </modules>
   </component>

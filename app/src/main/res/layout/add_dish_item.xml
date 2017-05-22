@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+    <ImageView
+        android:id="@+id/add_dish_img"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/a9" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/add_dish_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/add_dish_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textSize="12dp"
+            android:lines="2"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/add_dish_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="8dp"
+            android:layout_weight="1"
+            android:textSize="12dp"
+            android:textColor="@color/darkorange"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/add_dish_num"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:textSize="14dp"
+        android:textColor="@color/Login_btn"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/add_dish_sumprice"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/Login_btn"
+        android:textSize="14dp"
+        android:text="TextView" />
+
+
+
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/darkgray"
+        />
+</LinearLayout>

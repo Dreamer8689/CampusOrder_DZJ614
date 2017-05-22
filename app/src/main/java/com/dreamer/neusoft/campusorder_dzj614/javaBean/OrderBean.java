@@ -29,8 +29,8 @@ public class OrderBean {
     private String username;
     private String foodname;
     private int num;
-    private int sum;
-    private Object suggesttime;
+    private double sum;
+    private String suggesttime;
     private String ordertime;
     private String shopname;
     private String shopaddress;
@@ -62,11 +62,11 @@ public class OrderBean {
         this.num = num;
     }
 
-    public void setSum(int sum) {
+    public void setSum(double sum) {
         this.sum = sum;
     }
 
-    public void setSuggesttime(Object suggesttime) {
+    public void setSuggesttime(String suggesttime) {
         this.suggesttime = suggesttime;
     }
 
@@ -118,7 +118,7 @@ public class OrderBean {
         return num;
     }
 
-    public int getSum() {
+    public double getSum() {
         return sum;
     }
 

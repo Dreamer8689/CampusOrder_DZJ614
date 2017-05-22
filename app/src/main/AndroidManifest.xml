@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dreamer.neusoft.campusorder_dzj614">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--存储权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -28,7 +32,8 @@
         <activity android:name=".activity.UserInfoActivity" />
         <activity android:name=".activity.ChangeInfoActivity" />
         <activity android:name=".activity.ShopDetailActivity" />
-        <activity android:name=".activity.ShopFoodAssessActivity"></activity>
+        <activity android:name=".activity.ShopFoodAssessActivity" />
+        <activity android:name=".activity.AddOrderActivity"></activity>
     </application>
 
 </manifest>

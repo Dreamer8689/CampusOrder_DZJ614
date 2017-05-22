@@ -18,13 +18,14 @@ import com.dreamer.neusoft.campusorder_dzj614.fragment.HomeFragment;
 import com.dreamer.neusoft.campusorder_dzj614.fragment.MeFragment;
 import com.dreamer.neusoft.campusorder_dzj614.fragment.OrderFragment;
 import com.dreamer.neusoft.campusorder_dzj614.fragment.SearchFragment;
+import com.dreamer.neusoft.campusorder_dzj614.view.NoScollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContentActivity extends FragmentActivity implements View.OnClickListener {
 
-    private ViewPager mViewPager;
+    private NoScollViewPager mViewPager;
     //适配器
     private FragmentPagerAdapter mAdapter;
     //装载Fragment的集合
@@ -79,7 +80,7 @@ public class ContentActivity extends FragmentActivity implements View.OnClickLis
     }
 
     private void initView() {
-        mViewPager=(ViewPager)findViewById(R.id.id_viewpager);
+        mViewPager=(NoScollViewPager) findViewById(R.id.id_viewpager);
         HomeLayout = (LinearLayout) findViewById(R.id.id_tab_home);
         SearchLayout = (LinearLayout) findViewById(R.id.id_tab_search);
         OrderLayout = (LinearLayout) findViewById(R.id.id_tab_order);
@@ -94,6 +95,7 @@ public class ContentActivity extends FragmentActivity implements View.OnClickLis
         searchtv=(TextView)findViewById(R.id.searchtv);
         ordertv=(TextView)findViewById(R.id.ordertv);
         metv=(TextView)findViewById(R.id.metv);
+        mViewPager.setNoScroll(true);
     }
 
     private void initEvent() {

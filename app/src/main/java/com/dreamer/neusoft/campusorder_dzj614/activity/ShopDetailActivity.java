@@ -77,6 +77,8 @@ private ImageView shopImg,shopCollectImg;
 
     public void isCollected(){
 
+     toSharePreference();
+
         Call<isCollectedBean> call =collectionService.isCollection(userid,shop_id,0);
         call.enqueue(new Callback<isCollectedBean>() {
             @Override
@@ -104,6 +106,16 @@ private ImageView shopImg,shopCollectImg;
             }
         });
 
+    }
+
+    private void toSharePreference() {
+
+        shop=getSharedPreferences("shop", Context.MODE_PRIVATE);
+        editor=shop.edit();
+        editor.putInt("shop_id",shop_id);
+        editor.putString("shop_name",shopBean.getShopname().toString());
+        editor.putString("shop_phone",shopBean.getPhonenum().toString());
+        editor.commit();
     }
 
     public  void CollectionShop(){
@@ -213,6 +225,7 @@ private ImageView shopImg,shopCollectImg;
             public void handleMessage(Message msg) {
                 if(msg.arg1==1){
                     isCollected();
+
                 }
             }
         };
@@ -233,10 +246,7 @@ private ImageView shopImg,shopCollectImg;
             fragments.add(shopAssessFragment);
         }
 
-        shop=getSharedPreferences("shop", Context.MODE_PRIVATE);
-        editor=shop.edit();
-        editor.putInt("shop_id",shop_id);
-        editor.commit();
+
     }
 
     private void initView() {

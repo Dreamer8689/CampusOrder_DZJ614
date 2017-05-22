@@ -21,7 +21,7 @@
         android:orientation="horizontal"
         android:padding="5dp">
 
-        <ImageView android:id="@+id/collection_img"
+        <ImageView android:id="@+id/shopAssess_collection_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="5dp"

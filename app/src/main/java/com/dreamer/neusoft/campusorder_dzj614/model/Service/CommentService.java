@@ -20,7 +20,7 @@ public interface CommentService {
 
 
     @GET(Constant.ApiServiceUrl.GETALLCOMMENT)  //获取当前用户所有评论信息
-    Call<OrderBean> getCommentList(@Query("user_id") String userid);
+    Call<List<OrderBean>> getCommentList(@Query("user_id") int userid);
 
     @GET(Constant.ApiServiceUrl.INSERTCOMMENT)  //获取当前用户所有评论信息
     Call<String> toAddComment(@Query("order_id") String orderID,

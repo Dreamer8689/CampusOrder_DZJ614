@@ -17,7 +17,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="vertical">
 
         <LinearLayout
@@ -26,12 +25,51 @@
             android:background="@drawable/shop_detail"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="horizontal">
 
+
+                <ImageButton
+                    android:id="@+id/shop_Assess_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/none_color"
+
+                    android:gravity="left"
+                    android:paddingLeft="5dp"
+                    android:src="@drawable/vector_drawable_sort" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <ImageButton
+                    android:id="@+id/shop_Assess_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/none_color"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/shopcart" />
+
+                <ImageButton
+                    android:id="@+id/shop_Assess_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/none_color"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/vector_drawable_more" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
 
@@ -63,7 +101,12 @@
                             android:textColor="@color/white"
                             android:textSize="18dp" />
 
-
+                        <ImageView
+                            android:id="@+id/shop_cook_collect"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/heart_on" />
                     </LinearLayout>
 
                     <TextView
@@ -72,19 +115,41 @@
                         android:layout_height="wrap_content"
                         android:textSize="12dp"
                         android:layout_marginLeft="10dp"
+                        android:lines="4"
                         android:textColor="@color/white"
                         android:text="饭店简介：是一个主要为游客提供短期住宿的地方，酒店通常在提供住宿之余，亦为住客提供餐厅、游泳池、或照顾幼儿等服务。" />
 
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/foodDetail_price"
-                            android:layout_width="64dp"
+                                android:id="@+id/foodDetail_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="left"
+                                android:layout_marginLeft="10dp"
+                               android:layout_weight="1"
+                                android:text="TextView"
+                             android:gravity="center_vertical"
+                                android:textColor="@color/orangered"
+                                android:textSize="16dp" />
+
+                        <com.mcxtzhang.lib.AnimShopButton
+                            android:id="@+id/btnEle"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                         android:layout_gravity="right"
-                            android:textSize="12dp"
-                            android:textColor="@color/orangered"
-                            android:text="TextView" />
+
+                            app:addEnableBgColor="#3190E8"
+                            app:addEnableFgColor="#ffffff"
+                            app:hintBgColor="#3190E8"
+                            app:hintBgRoundValue="15dp"
+                            app:hintFgColor="#ffffff"
+                            app:maxCount="99" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -99,6 +164,8 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textSize="16sp"
+            android:background="@color/shop_datail_tab"
+            android:textColor="@color/white"
             android:text="用户评价" />
 
         <View

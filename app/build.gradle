@@ -31,8 +31,8 @@ dependencies {
     })
     compile project(':pulltofresh')
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     compile 'com.squareup.picasso:picasso:2.5.2'
+    //添加购物车
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
@@ -55,7 +55,10 @@ dependencies {
     compile 'com.github.thinkcool:circletextimageview:1.0.20151218'
     compile 'com.hejunlin.superindicatorlibray:superindicatorlibray:1.0.3'
     compile 'com.wingjay:blurimageviewlib:2.0.1'
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
+    compile 'com.github.mcxtzhang:AnimShopButton:V1.2.0'
+    compile 'com.github.mcxtzhang:all-base-adapter:V1.4.0'
     testCompile 'junit:junit:4.12'
-
-    compile 'com.github.mcxtzhang:AnimShopButton:V1.2.0'  //添加购物车
+    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    compile project(path: ':pickerview')
 }

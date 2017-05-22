@@ -1,10 +1,12 @@
 package com.dreamer.neusoft.campusorder_dzj614.javaBean;
 
+import java.io.Serializable;
+
 /**
  * Created by DZJ-PC on 2017/4/10.
  */
 
-public class FoodBean {
+public class FoodBean implements Serializable {
 
     /**
      * food_id : 1
@@ -16,7 +18,93 @@ public class FoodBean {
      * type_id : 1
      * recommand : 1
      */
+//
+//    private int food_id;
+//    private String foodname;
+//    private String intro;
+//    private String pic;
+//    private int price;
+//    private int shop_id;
+//    private int type_id;
+//    private int recommand;
+//    private int isCollected;
+//
+//    public int getIsCollected() {
+//        return isCollected;
+//    }
+//
+//    public void setIsCollected(int isCollected) {
+//        this.isCollected = isCollected;
+//    }
+//
+//    public void setFood_id(int food_id) {
+//        this.food_id = food_id;
+//    }
+//
+//    public void setFoodname(String foodname) {
+//        this.foodname = foodname;
+//    }
+//
+//    public void setIntro(String intro) {
+//        this.intro = intro;
+//    }
+//
+//    public void setPic(String pic) {
+//        this.pic = pic;
+//    }
+//
+//    public void setPrice(int price) {
+//        this.price = price;
+//    }
+//
+//    public void setShop_id(int shop_id) {
+//        this.shop_id = shop_id;
+//    }
+//
+//    public void setType_id(int type_id) {
+//        this.type_id = type_id;
+//    }
+//
+//    public void setRecommand(int recommand) {
+//        this.recommand = recommand;
+//    }
+//
+//    public int getFood_id() {
+//        return food_id;
+//    }
+//
+//    public String getFoodname() {
+//        return foodname;
+//    }
+//
+//    public String getIntro() {
+//        return intro;
+//    }
+//
+//    public String getPic() {
+//        return pic;
+//    }
+//
+//    public int getPrice() {
+//        return price;
+//    }
+//
+//    public int getShop_id() {
+//        return shop_id;
+//    }
+//
+//    public int getType_id() {
+//        return type_id;
+//    }
+//
+//    public int getRecommand() {
+//        return recommand;
+//    }
 
+
+
+    private int dishAmount;
+    private int dishRemain;
     private int food_id;
     private String foodname;
     private String intro;
@@ -27,6 +115,62 @@ public class FoodBean {
     private int recommand;
     private int isCollected;
 
+    public String getFoodname() {
+        return foodname;
+    }
+
+    public void setFoodname(String foodname) {
+        this.foodname = foodname;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getShop_id() {
+        return shop_id;
+    }
+
+    public void setShop_id(int shop_id) {
+        this.shop_id = shop_id;
+    }
+
+    public int getType_id() {
+        return type_id;
+    }
+
+    public void setType_id(int type_id) {
+        this.type_id = type_id;
+    }
+
+    public int getRecommand() {
+        return recommand;
+    }
+
+    public void setRecommand(int recommand) {
+        this.recommand = recommand;
+    }
+
     public int getIsCollected() {
         return isCollected;
     }
@@ -35,67 +179,67 @@ public class FoodBean {
         this.isCollected = isCollected;
     }
 
-    public void setFood_id(int food_id) {
-        this.food_id = food_id;
-    }
-
-    public void setFoodname(String foodname) {
-        this.foodname = foodname;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setShop_id(int shop_id) {
-        this.shop_id = shop_id;
-    }
-
-    public void setType_id(int type_id) {
-        this.type_id = type_id;
-    }
-
-    public void setRecommand(int recommand) {
-        this.recommand = recommand;
-    }
-
     public int getFood_id() {
         return food_id;
     }
 
-    public String getFoodname() {
+    public void setFood_id(int food_id) {
+        this.food_id = food_id;
+    }
+
+    public FoodBean(String foodname, int price, int dishAmount) {
+        this.foodname = foodname;
+        this.price = price;
+        this.dishAmount = dishAmount;
+        this.dishRemain = dishAmount;
+    }
+
+
+    public String getDishName() {
         return foodname;
     }
 
-    public String getIntro() {
-        return intro;
+    public void setDishName(String foodname) {
+        this.foodname = foodname;
     }
 
-    public String getPic() {
-        return pic;
-    }
-
-    public int getPrice() {
+    public double getDishPrice() {
         return price;
     }
 
-    public int getShop_id() {
-        return shop_id;
+    public void setDishPrice(int price) {
+        this.price = price;
     }
 
-    public int getType_id() {
-        return type_id;
+    public int getDishAmount() {
+        return dishAmount;
     }
 
-    public int getRecommand() {
-        return recommand;
+    public void setDishAmount(int dishAmount) {
+        this.dishAmount = dishAmount;
+    }
+
+    public int getDishRemain() {
+        return dishRemain;
+    }
+
+    public void setDishRemain(int dishRemain) {
+        this.dishRemain = dishRemain;
+    }
+
+    public int hashCode() {
+        int code = this.foodname.hashCode() + (int) this.price;
+        return code;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+
+        return obj instanceof FoodBean &&
+                this.foodname.equals(((FoodBean) obj).foodname) &&
+                this.price == ((FoodBean) obj).price &&
+                this.dishAmount == ((FoodBean) obj).dishAmount &&
+                this.dishRemain == ((FoodBean) obj).dishRemain;
     }
 }
