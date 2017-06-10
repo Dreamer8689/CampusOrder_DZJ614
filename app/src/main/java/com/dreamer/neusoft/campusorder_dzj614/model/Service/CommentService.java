@@ -2,6 +2,7 @@ package com.dreamer.neusoft.campusorder_dzj614.model.Service;
 
 import com.dreamer.neusoft.campusorder_dzj614.constant.Constant;
 import com.dreamer.neusoft.campusorder_dzj614.javaBean.OrderBean;
+import com.dreamer.neusoft.campusorder_dzj614.javaBean.isSuccessBean;
 
 import java.util.List;
 
@@ -23,13 +24,13 @@ public interface CommentService {
     Call<List<OrderBean>> getCommentList(@Query("user_id") int userid);
 
     @GET(Constant.ApiServiceUrl.INSERTCOMMENT)  //获取当前用户所有评论信息
-    Call<String> toAddComment(@Query("order_id") String orderID,
-                              @Query("Comment") String Comment);
+    Call<isSuccessBean> toAddComment(@Query("order_id") int orderID,
+                                     @Query("content") String Comment);
 
     @GET(Constant.ApiServiceUrl.UPDATECOMMENT)  //更新当前用户评论信息
-    Call<String> toUpdateComment(@Query("order_id") String orderID,
-                                 @Query("Comment") String Comment);
+    Call<isSuccessBean> toUpdateComment(@Query("order_id") int orderID,
+                                 @Query("content") String Comment);
 
     @GET(Constant.ApiServiceUrl.DELETECOMMENT)  //删除当前用户评论信息
-    Call<String> toDeleteComment(@Query("order_id") String orderID);
+    Call<isSuccessBean> toDeleteComment(@Query("order_id") int orderID);
 }

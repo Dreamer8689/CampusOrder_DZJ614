@@ -60,5 +60,10 @@ dependencies {
     compile 'com.github.mcxtzhang:all-base-adapter:V1.4.0'
     testCompile 'junit:junit:4.12'
     compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    compile 'com.mylhyl:superDialog:1.2.1'
+    compile 'com.github.arimorty:floatingsearchview:2.0.4'
     compile project(path: ':pickerview')
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/BmobPay_v3.2.0_170602.jar')
+    compile 'com.jaredrummler:material-spinner:1.1.0'
 }

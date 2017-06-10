@@ -5,16 +5,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.dreamer.neusoft.campusorder_dzj614.R;
+import com.dreamer.neusoft.campusorder_dzj614.constant.Constant;
+import com.dreamer.neusoft.campusorder_dzj614.javaBean.User;
+import com.dreamer.neusoft.campusorder_dzj614.javaBean.UserInfoQQ;
+import com.dreamer.neusoft.campusorder_dzj614.listener.BaseUiListener;
 import com.dreamer.neusoft.campusorder_dzj614.model.Api.CookApi;
 import com.dreamer.neusoft.campusorder_dzj614.model.Service.UserService;
-import com.dreamer.neusoft.campusorder_dzj614.javaBean.User;
+import com.tencent.connect.common.Constants;
+import com.tencent.tauth.Tencent;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,16 +34,22 @@ private Button login_reg_btn;
     private EditText UserName;
     private EditText Passwd;
     private Switch rememberPwd;
+    private ImageView qq,weiChat,weiBo;
     private SharedPreferences RemPwd;
     private SharedPreferences.Editor editor;
-    private  String uname;
-    private  String pass;
+    private static String uname;
+    private static String pass;
     private CookApi cookapi;
     private UserService userservice;
     private  User user;
     private  Intent intent;
      private  String userid;
     private  String[] UserInfo=new String[5];
+    private BaseUiListener mIUiListener;
+    private static final String TAG = "LoginActivity";
+    private Tencent mTencent;
+    private UserInfoQQ userInfoQQ;
+    public static Handler mHandlerofQQ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +60,11 @@ private Button login_reg_btn;
         MyClickListener();
     }
 
-    private void initData() {
-        uname =UserName.getText().toString();
-        pass=Passwd.getText().toString();
+    private void initData(int i) {
+       if(i==1){
+           uname =UserName.getText().toString();
+           pass=Passwd.getText().toString();
+       }
 
 
     }
@@ -70,14 +86,22 @@ private Button login_reg_btn;
         Passwd=(EditText) findViewById(R.id.login_password);
         rememberPwd=(Switch)findViewById(R.id.login_RemPass);
         login_btn=(Button)findViewById(R.id.login_btn);
+        qq=(ImageView) findViewById(R.id.login_qq);
+        weiChat=(ImageView) findViewById(R.id.login_wechat);
+        weiBo=(ImageView) findViewById(R.id.login_weibo);
         cookapi=new CookApi(0);
         userservice=cookapi.getService();
+
+        mTencent = Tencent.createInstance(Constant.Tencent.APP_ID,LoginActivity.this.getApplicationContext());
     }
 
     private void MyClickListener() {
 
         login_reg_btn.setOnClickListener(this);
         login_btn.setOnClickListener(this);
+        qq.setOnClickListener(this);
+        weiChat.setOnClickListener(this);
+        weiBo.setOnClickListener(this);
     }
 
 
@@ -89,6 +113,7 @@ private Button login_reg_btn;
                 goToReg();
                 break;
             case R.id.login_btn:
+                initData(1);
                 goToLogin(1);
                 break;
             case R.id.login_qq:
@@ -128,9 +153,10 @@ private Button login_reg_btn;
     }
 
 
-    private void goToLogin(int type) {
+    public void goToLogin(int type) {
         if(type==1){//本地登陆
-            initData();
+
+
             Call<User> call=userservice.toLogin(uname,pass);
             call.enqueue(new Callback<User>() {
                 @Override
@@ -138,7 +164,7 @@ private Button login_reg_btn;
                     if(response.isSuccessful()){
                         user=response.body();
                         userid=user.getUserid().toString();
-
+                        Toast.makeText(LoginActivity.this,"uid:"+ userid, Toast.LENGTH_SHORT).show();
                        if(!((uname.equals(""))||(pass.equals("")))){
                            if(user.getUserid().equals("0")){
                                Toast.makeText(LoginActivity.this, "密码或用户名错误", Toast.LENGTH_SHORT).show();
@@ -171,17 +197,83 @@ private Button login_reg_btn;
                 }
             });
         }  //本地登陆结束
-        else if(type==0){
+        else if(type==2){
+            mIUiListener = new BaseUiListener(LoginActivity.this,mTencent);
+            mTencent.login(LoginActivity.this,"all", mIUiListener);
+
+            mHandlerofQQ = new Handler(){
+                @Override
+                public void handleMessage(Message msg) {
+                    if(msg.arg1==1){
+                        userInfoQQ=mIUiListener.getUserInfoQQ();
+                        RegisterofOther(userInfoQQ);
+                    }
+                }
+            };
 
         }
-        else if(type==0){
+        else if(type==3){
 
         }
-        else if(type==0){
+        else if(type==4){
 
         }else{
 
         }
     }
+
+    private void RegisterofOther(final UserInfoQQ userInfoQQ) {
+
+      CookApi cookApi=new CookApi(0);
+      UserService userservice=cookApi.getService();
+        Call<User> call=userservice.toReg(userInfoQQ.getNickname(),userInfoQQ.getNickname(),"1",
+                userInfoQQ.getProvince()+userInfoQQ.getCity(),"正常");
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if(response.isSuccessful()){
+                    user=response.body();
+                    if(user.getSuccess().toString().equals("1")){
+
+                        uname=userInfoQQ.getNickname();
+                        pass=userInfoQQ.getNickname();
+
+                        goToLogin(1);
+                    }else{
+                        uname=userInfoQQ.getNickname();
+                        pass=userInfoQQ.getNickname();
+                        Toast.makeText(LoginActivity.this,"0"+  uname + pass, Toast.LENGTH_SHORT).show();
+                        goToLogin(1);
+                    }
+                }else{
+                    Toast.makeText(LoginActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
+
+
+
+
+
+
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Constants.REQUEST_LOGIN){
+            Tencent.onActivityResultData(requestCode,resultCode,data,mIUiListener);
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
 
 }

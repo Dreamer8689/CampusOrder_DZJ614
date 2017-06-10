@@ -252,7 +252,10 @@ private ImageView shopImg,shopCollectImg;
     private void initView() {
         intent=getIntent();
         shop_id=intent.getIntExtra("shop_id",-1);
-
+        shop=getSharedPreferences("shop", Context.MODE_PRIVATE);
+        editor=shop.edit();
+        editor.putInt("shop_id",shop_id);
+        editor.commit();
         user=getSharedPreferences("User", MODE_PRIVATE);
         userid=Integer.valueOf(user.getString("userId","")).intValue();
 

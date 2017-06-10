@@ -75,7 +75,6 @@ public class OrderFragment extends Fragment {
             @Override
             public void onDel(int pos) {
                 if (pos >= 0 && pos < orderBeanList.size()) {
-                    Toast.makeText(getActivity(), "删除:" + pos, Toast.LENGTH_SHORT).show();
                     orderBeanList.remove(pos);
                     orderAdapter.notifyItemRemoved(pos);//推荐用这个
                     //如果删除时，不使用mAdapter.notifyItemRemoved(pos)，则删除没有动画效果，

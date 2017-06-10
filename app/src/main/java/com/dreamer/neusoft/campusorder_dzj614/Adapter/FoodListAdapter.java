@@ -84,7 +84,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 Intent intent=new Intent(mContext,ShopDetailActivity.class);
 
                 intent.putExtra("shop_id",entity.getShop_id());
-                mContext.startActivity(intent);
+               mContext.startActivity(intent);
             }
         });
         viewHolder.collection_img.setOnClickListener(new View.OnClickListener() {

@@ -1,10 +1,10 @@
 package com.dreamer.neusoft.campusorder_dzj614.activity;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CommentActivity extends Activity {
+public class CommentActivity extends FragmentActivity {
     private CookApi cookapi;
     private CommentService commentService;
     private List<OrderBean> orderBeanList;
@@ -57,7 +57,7 @@ public class CommentActivity extends Activity {
     }
 
     private void MyEvent() {
-        commentAdapter=new CommentAdapter(this,orderBeanList);
+        commentAdapter=new CommentAdapter(CommentActivity.this,orderBeanList);
         commentAdapter.setOnDelListener(new CommentAdapter.onSwipeListener() {
             @Override
             public void onDel(int pos) {

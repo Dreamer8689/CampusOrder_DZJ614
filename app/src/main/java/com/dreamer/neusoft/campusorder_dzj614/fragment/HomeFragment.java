@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
                 if(response.isSuccessful()){
                   shop=response.body();
 
+
                     recyclerView.setAdapter(new FoodListAdapter(getActivity(),shop));
                 }else{
                    Toast.makeText(getActivity(), "获取数据失败", Toast.LENGTH_SHORT).show();
@@ -119,11 +120,6 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getActivity(), info.getTitle() + "选择了--" + position, Toast.LENGTH_LONG).show();
                 }
             };
-
-
-
-
-
 
 
 }

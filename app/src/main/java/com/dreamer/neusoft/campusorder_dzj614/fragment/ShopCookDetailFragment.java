@@ -180,6 +180,8 @@ public class ShopCookDetailFragment extends Fragment implements ShopCartImp,Shop
     private void initData() {
             Shop = getActivity().getSharedPreferences("shop", MODE_PRIVATE);
             shop_id=Shop.getInt("shop_id",-1);
+
+       // Toast.makeText(getActivity(), "getActivity().getIntent()" + getActivity().getIntent().getIntExtra("shop_id",0), Toast.LENGTH_SHORT).show();
         shop_name=Shop.getString("shop_name","苏香园");
         shop_phone=Shop.getString("shop_phone","13342276666");
         User = getActivity().getSharedPreferences("User", MODE_PRIVATE);

@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!--存储权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +33,23 @@
         <activity android:name=".activity.ChangeInfoActivity" />
         <activity android:name=".activity.ShopDetailActivity" />
         <activity android:name=".activity.ShopFoodAssessActivity" />
-        <activity android:name=".activity.AddOrderActivity"></activity>
+        <activity android:name=".activity.AddOrderActivity"/>
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1105962367" /> <!-- 开放平台获取的APPID -->
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

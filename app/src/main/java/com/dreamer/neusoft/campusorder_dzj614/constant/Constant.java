@@ -43,4 +43,12 @@ public final class Constant {
         public  final  static  String  GETUSERINFO="getUserById.do";//获取用户信息
     }
 
+    public final  static  class  Tencent{
+
+
+        public  final static  String APP_ID = "1105962367";//官方获取的APPID
+
+
+    }
+
 }

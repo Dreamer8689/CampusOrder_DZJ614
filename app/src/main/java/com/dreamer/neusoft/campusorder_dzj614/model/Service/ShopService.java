@@ -24,5 +24,5 @@ public interface ShopService {
 
 
     @GET(Constant.ApiServiceUrl.SEARCHSERVICE)  //搜索菜品接口
-    Call<FoodBean> toSearch(@Query("search") String search);
+    Call<List<FoodBean>> toSearch(@Query("search") String search);
 }
