@@ -169,35 +169,47 @@
         android:layout_marginTop="5dp"
         android:background="@color/darkgray"
         />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/send_way_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="配送方式" />
+        <!--<TextView-->
+        <!--android:id="@+id/MethodOfPayment"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="3"-->
+        <!--android:text="支付方式" />-->
 
-        <TextView
-            android:id="@+id/send_way"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:textColor="@color/Login_btn"
-            android:text="蜂鸟配送" />
 
-        <ImageView
 
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/order_more" />
+            android:layout_weight="1"
+            android:background="@color/darkgray"
+            android:paddingLeft="10dp"
+            android:textColor="@color/Login_btn"
+            />
+
+        <!--<TextView-->
+        <!--android:id="@+id/MethodOfPay"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textColor="@color/Login_btn"-->
+        <!--android:text="微信支付" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@id/order_more_img"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/order_more" />-->
     </LinearLayout>
+
 
     <View
         android:layout_width="match_parent"
@@ -293,34 +305,36 @@
         android:layout_height="1dp"
         android:background="@color/darkgray"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/MethodOfPayment"
+            android:id="@+id/send_way_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:layout_marginLeft="10dp"
             android:layout_weight="1"
-            android:text="支付方式" />
+            android:layout_marginLeft="10dp"
+            android:text="配送方式" />
 
         <TextView
-            android:id="@+id/MethodOfPay"
+            android:id="@+id/send_way"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textColor="@color/Login_btn"
-            android:text="微信支付" />
+            android:text="蜂鸟配送" />
 
         <ImageView
-            android:id="@id/order_more_img"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/order_more" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

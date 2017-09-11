@@ -5,11 +5,12 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.dreamer.neusoft.campusorder_dzj614"
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -23,6 +24,19 @@ android {
             maven { url "https://jitpack.io" }
         }
     }
+
+    useLibrary 'org.apache.http.legacy'
+
+    sourceSets {
+
+        main {
+
+            jniLibs.srcDirs = ['libs']//将so文件目录指向libs目录
+
+        }
+
+    }
+
 }
 
 dependencies {
@@ -66,4 +80,26 @@ dependencies {
     compile files('libs/mta-sdk-1.6.2.jar')
     compile files('libs/BmobPay_v3.2.0_170602.jar')
     compile 'com.jaredrummler:material-spinner:1.1.0'
+
+//    //3.4.7-aar：具务必查看下面注释[1]
+//    compile 'cn.bmob.android:bmob-sdk:3.4.7-aar'
+
+    //bmob-push：Bmob的推送包
+    compile 'cn.bmob.android:bmob-push:0.8'
+
+    //bmob-im：Bmob的即时通讯包，注意每个版本的im依赖特定版本的bmob-sdk，具体的依赖关系可查看下面注释[3]
+    compile 'cn.bmob.android:bmob-im:2.0.4'
+    compile 'cn.bmob.android:androidasync:2.1.6'
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
+    //注：别忘记导入3.4.6的相关依赖包[2]
+
+    //bmob-sms ：Bmob单独为短信服务提供的包
+    compile 'cn.bmob.android:bmob-sms:1.0.1'
+
+    //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
+    compile 'cn.bmob.android:http-legacy:1.0'
+
+
+
+    compile 'com.android.support:multidex:1.0.0'
 }
